@@ -26,7 +26,7 @@ other\_search\_term\_present
 -   For all sounds with search\_term\_present = Yes (regardless
 of duration), label in Audacity (see below)
 
--   Once there are 5 unique files containing at least 15 seconds
+-   Once there are 5 unique files containing at least 4 seconds
 of continuous sounds in the target umbrella category, move
 onto the next most cited umbrella category. Continuous =
 offset and onset of subsequent sounds separated by no more
@@ -52,4 +52,4 @@ descriptor, add it to a spreadsheet containing descriptive
 labels and umbrella categories.
 
 -   If there is at least 250 ms between instances of a sound, label
-the onset & offset separately
+the onset & offset separately (or when in doubt always label separately?)
