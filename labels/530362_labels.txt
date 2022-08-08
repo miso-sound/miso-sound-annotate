@@ -1,0 +1,9 @@
+0.810661	7.762697	C1-basketball_dribbling
+7.860959	10.139409	C1-basketball_dribbling
+10.550881	12.325738	C1-basketball_dribbling
+12.614382	16.950192	C1-basketball_dribbling
+17.355523	20.248110	C1-basketball_dribbling
+20.272676	23.558311	C1-basketball_dribbling
+25.400723	29.920775	C1-basketball_dribbling
+32.524717	40.778724	C1-basketball_dribbling
+43.198425	43.824845	C1-basketball_dribbling

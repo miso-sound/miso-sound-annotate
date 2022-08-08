@@ -1,0 +1,3 @@
+0.000000	5.241340	C1-chewing_gum
+5.241340	7.414578	C1-chewing_gum
+7.414578	11.249704	C1-chewing_gum

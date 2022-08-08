@@ -1,0 +1,2 @@
+1.038694	6.089345	C1-knife_cutting
+7.322794	10.899797	C1-knife_cutting

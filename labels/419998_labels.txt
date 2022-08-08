@@ -1,0 +1,2 @@
+1.957775	11.515187	C1-knife_cutting
+12.846087	15.261962	C1-knife_cutting
