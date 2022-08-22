@@ -1,8 +1,8 @@
 ﻿label_file,taxonomy,background_noise?,notes
 [freesoundID]_label.txt,https://github.com/miso-sound/miso-sound-taxonomy/blob/049742a6db9f8dbd311c9ca66a15bf1dfd7ff7fa/terms/taxonomy_for_annotations.json,yes,example: really loud constant fan
 full_taxonomy_labels.txt,https://github.com/deanorloff/miso-sound-taxonomy/blob/27bad02358277a453f367cafae21a9891a65567b/terms/taxonomy_for_annotations.json,no,
-125375_labels.txt,https://github.com/deanorloff/miso-sound-taxonomy/commit/dc113f08c4ee56bf59cba24a76c73bf900e8ddb4,no,
-486300_labels.txt,https://github.com/deanorloff/miso-sound-taxonomy/commit/dc113f08c4ee56bf59cba24a76c73bf900e8ddb4,no,
+125375_labels.txt,https://github.com/deanorloff/miso-sound-taxonomy/blob/dc113f08c4ee56bf59cba24a76c73bf900e8ddb4/terms/taxonomy_for_annotations.json,no,
+486300_labels.txt,https://github.com/deanorloff/miso-sound-taxonomy/blob/eada89b8bef784de13d0ebcf1d927abb0a0e7ffe/terms/taxonomy_for_annotations.json,no,
 180150_labels.txt,https://github.com/deanorloff/miso-sound-taxonomy/blob/eada89b8bef784de13d0ebcf1d927abb0a0e7ffe/terms/taxonomy_for_annotations.json,no,
 251984_labels.txt,https://github.com/deanorloff/miso-sound-taxonomy/blob/1d82ffdd94884223f03c36e53397f230b90ee996/terms/taxonomy_for_annotations.json,no,
 251984_labels.txt,https://github.com/deanorloff/miso-sound-taxonomy/blob/311b942cbdd13cadc9b57f4f7958aac726cdcac4/terms/taxonomy_for_annotations.json,no,
