@@ -1,0 +1,6 @@
+3.646004	10.227752	C1-knife_cutting
+12.476910	20.242425	C1-knife_cutting
+21.994401	26.492718	C1-knife_cutting
+26.871523	31.961724	C1-knife_cutting
+32.719335	36.436365	C1-knife_cutting
+38.448770	41.929046	C1-knife_cutting

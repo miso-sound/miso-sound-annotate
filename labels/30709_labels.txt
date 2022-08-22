@@ -1,0 +1,4 @@
+1.047921	16.551775	C1-human_breathing
+16.578644	27.037700	C1-human_breathing
+27.037700	46.699650	C1-human_breathing
+47.357959	49.265712	C1-human_breathing

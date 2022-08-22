@@ -1,0 +1,4 @@
+3.374752	4.819922	C2-footsteps
+8.856707	13.176067	C1-flipping_newspaper_pages
+25.181466	27.425919	C1-flipping_newspaper_pages
+29.525047	30.832965	C2-exhale

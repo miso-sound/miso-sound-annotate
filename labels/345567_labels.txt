@@ -1,0 +1,2 @@
+0.976000	8.480000	C1-plastic_crumpling
+9.368000	15.296000	C1-plastic_crumpling

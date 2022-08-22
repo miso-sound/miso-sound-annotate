@@ -1,0 +1,3 @@
+0.665977	11.686307	C1-human_breathing
+11.880550	12.094614	C1-whimper
+12.431567	29.921386	C1-human_breathing

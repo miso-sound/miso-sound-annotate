@@ -1,0 +1,3 @@
+0.209288	4.269472	C1-knife_cutting
+5.880988	9.993494	C1-knife_cutting
+13.949034	18.898691	C1-squishing

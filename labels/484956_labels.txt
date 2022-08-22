@@ -1,0 +1,3 @@
+0.540178	1.040219	C1-flipping_newspaper_pages
+2.429964	2.919970	C1-flipping_newspaper_pages
+4.209373	5.067303	C1-flipping_newspaper_pages
