@@ -1,9 +1,7 @@
 0.916617	1.466587	C1-water_drops
-1.695741	10.632757	C1-silence
 10.747334	17.782369	C1-water_drops
 18.469832	25.711106	C1-recording_artifact
 25.871514	26.467315	C1-water_drops
-26.581892	32.516987	C1-silence
 32.516987	39.918669	C1-water_drops
 39.975958	41.018610	C1-recording_artifact
 43.229948	53.518974	C1-water_drops

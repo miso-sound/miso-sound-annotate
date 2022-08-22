@@ -1,4 +1,4 @@
-0.098065	15.000091	C2-white_noise
+0.098065	15.000091	C2-recording artifact
 0.866899	2.230008	C1-slurping
 2.353571	3.510743	C1-swallowing
 4.212892	6.574308	C1-slurping
