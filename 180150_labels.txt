@@ -1,6 +1,0 @@
-1.180304	2.391133	C2-lip_smacks
-2.533584	4.466840	C1-mouth_sounds_other
-4.945067	8.374054	C1-lip_smacks
-8.618255	14.224699	C2-mouth_sounds_other
-15.822179	17.236509	C2-lip_smacks
-17.307734	19.373266	C2-mouth_sounds_other
