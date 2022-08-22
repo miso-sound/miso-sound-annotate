@@ -1,9 +1,0 @@
-0.207340	1.858656	C1-flipping_newspaper_pages
-3.413707	5.605588	C1-flipping_newspaper_pages
-6.323873	8.101074	C1-flipping_newspaper_pages
-9.944920	11.248201	C1-flipping_newspaper_pages
-13.358627	14.758173	C1-flipping_newspaper_pages
-16.676069	18.549535	C1-flipping_newspaper_pages
-20.156420	21.570776	C1-flipping_newspaper_pages
-22.903677	24.717903	C1-flipping_newspaper_pages
-25.021508	28.109395	C1-recording_artifact
