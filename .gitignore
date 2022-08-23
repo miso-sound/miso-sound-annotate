@@ -1,3 +1,4 @@
 local_data/*
+local_secrets/*
 
 .ipynb_checkpoints
