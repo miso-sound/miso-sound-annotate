@@ -20,4 +20,4 @@ def check_label_name_format(label_name):
     assert label_name.split("-")[0] in ["C1", "C2"], label_name + ": The part of the label before `-` should be C1 or C2, not " + label_name.split("-")[0]    
 
 if __name__ == "__main__":
-    out = test_label_format()
+    test_label_format()
