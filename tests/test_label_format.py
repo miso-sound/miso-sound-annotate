@@ -12,12 +12,13 @@ def test_label_format():
     label_file_paths = [pathlib.Path(label_dir, f) for f in label_files]
     
     for p in label_file_paths:
-        anno_df = pd.read_table(p, header=None)
-        label_names = anno_df.iloc[:,2]
-        [check_label_name_format(name) for name in label_names]
+        check_label_name_format(p)
 
-def check_label_name_format(label_name):
-    assert label_name.split("-")[0] in ["C1", "C2"], label_name + ": The part of the label before `-` should be C1 or C2, not " + label_name.split("-")[0]    
+def check_label_name_format(p):
+    anno_df = pd.read_table(p, header=None)
+    label_names = anno_df.iloc[:,2]
+    for label_name in label_names:
+        assert label_name.split("-")[0] in ["C1", "C2"], str(p) + ": The part of the label before `-` should be C1 or C2, not " + label_name.split("-")[0]    
 
 if __name__ == "__main__":
     test_label_format()
