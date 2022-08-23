@@ -23,6 +23,9 @@ jobs:
     - name: Check formatting of label files
       run: |-
         python tests/test_label_format.py
+      env:
+        ACCESS_TOKEN_GITHUB: ${{secrets.ACCESS_TOKEN_GITHUB}}
+
     - name: Commit and push if changed
       run: |-
         git diff
