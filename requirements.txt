@@ -1,0 +1,4 @@
+numpy
+pandas
+json_tricks
+PyGithub
