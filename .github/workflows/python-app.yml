@@ -1,4 +1,4 @@
-name: Check label formats
+name: Check labels
 
 on:
   push:
@@ -25,12 +25,14 @@ jobs:
         python tests/test_label_format.py
       env:
         ACCESS_TOKEN_GITHUB: ${{secrets.ACCESS_TOKEN_GITHUB}}
-
+    - name: Update summary table for labels
+      run: |-
+        python docs/gen_summary_table.py
     - name: Commit and push if changed
       run: |-
         git diff
         git config --global user.email "check-bot@example.com"
         git config --global user.name "check-bot"
         git add -A
-        git commit -m "Checked!" || exit 0
+        git commit -m "Updated!" || exit 0
         git push
