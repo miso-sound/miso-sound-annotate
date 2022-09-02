@@ -28,7 +28,7 @@ jobs:
         ACCESS_TOKEN_GITHUB: ${{secrets.ACCESS_TOKEN_GITHUB}}
     - name: Update summary table for labels
       run: |-
-        python docs/gen_summary_table.py
+        python docs/readme/gen_summary_table.py
     - name: Commit and push if changed
       run: |-
         git diff
