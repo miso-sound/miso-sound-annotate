@@ -1,5 +1,4 @@
 import os
-import numpy as np
 import pandas as pd
 import pathlib
 
@@ -31,7 +30,6 @@ def test_label_format(label_dir, taxonomy_terms=None):
     label_info_df = pd.read_csv(label_info_df_path)
     files_ignore_for_now = ["[freesoundID]_label.txt", "full_taxonomy_labels.txt"]
     label_files = [f for f in label_info_df["label_file"].values if f not in files_ignore_for_now]
-    label_info_dict = label_info_df.set_index(["label_file"]).to_dict()
     label_file_paths = [pathlib.Path(label_dir, f) for f in label_files]
     
     for p in label_file_paths:
@@ -49,12 +47,11 @@ if __name__ == "__main__":
     package_dir = pathlib.Path(__file__).parent.parent.absolute()
     label_dir = pathlib.Path(package_dir, "labels")
     local_secrets_path = pathlib.Path(package_dir, "local_secrets", "secrets.json")
+    
     secrets = get_secrets(local_secrets_path=local_secrets_path)
     g = github_authentication(secrets=secrets)
     
    
-    package_dir = pathlib.Path(__file__).parent.parent.absolute()
-    label_dir = pathlib.Path(package_dir, "labels")
     label_info_df_path = pathlib.Path(label_dir, "label_info.csv")
     label_info_df = pd.read_csv(label_info_df_path)
     files_ignore_for_now = ["[freesoundID]_label.txt", "full_taxonomy_labels.txt"]
