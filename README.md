@@ -34,8 +34,8 @@ start_sync_summary_table
 |  9 | knife_cutting            |        71.0147   |        5.46267  |                         13 |                           5 |
 | 10 | recording_artifact       |        28.3371   |        5.66742  |                          5 |                           4 |
 | 11 | exhaling                 |        14.0364   |        1.55959  |                          9 |                           4 |
-| 12 | talking                  |         8.72669  |        2.18167  |                          4 |                           3 |
-| 13 | swallowing               |         4.55834  |        0.911668 |                          5 |                           2 |
+| 12 | swallowing               |        13.4329   |        2.23882  |                          6 |                           3 |
+| 13 | talking                  |         8.72669  |        2.18167  |                          4 |                           3 |
 | 14 | tapping                  |        13.2682   |        2.65363  |                          5 |                           2 |
 | 15 | footsteps                |         2.07991  |        1.03996  |                          2 |                           2 |
 | 16 | birds_chirping           |         3.79394  |        3.79394  |                          1 |                           1 |
