@@ -6,7 +6,7 @@
 sufficiently detailed descriptive label:
 
     - The salience label is a (subjective) assessment of the sound's 
-    presence: 1 = foreground, 2 = background. [Here](https://github.com/miso-sound/miso-sound-annotate/tree/main/examples/UrbanSound) are some examples from the UrbanSound database.
+    presence: 1 = foreground, 2 = background. [Here](https://github.com/miso-sound/urban-sound-example/tree/main/example_data) are some examples from the UrbanSound database.
 
     -   The descriptive label may not match the search terms exactly and
     may vary in level of detail (e.g. "woman sniffling" could be
