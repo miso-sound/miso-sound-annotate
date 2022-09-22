@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import pathlib
+import requests
 
 from github import Github
 from json_tricks import loads, load
@@ -53,14 +54,14 @@ if __name__ == "__main__":
     
     if repo_is_public:
         public_taxonomy_url = "https://raw.githubusercontent.com/miso-sound/miso-sound-taxonomy/main/terms/taxonomy_for_annotations.json"
-        newest_taxonomy = load(public_taxonomy_url)
+        decoded_content = requests.get(public_taxonomy_url)
     else:
         local_secrets_path = pathlib.Path(package_dir, "local_secrets", "secrets.json")
         secrets = get_secrets(local_secrets_path=local_secrets_path)
         g = github_authentication(secrets=secrets)
         repo = g.get_repo("miso-sound/miso-sound-taxonomy")
         decoded_content = repo.get_contents("terms/taxonomy_for_annotations.json").decoded_content.decode()
-        newest_taxonomy = loads(decoded_content)
+    newest_taxonomy = loads(decoded_content)
    
     label_info_df_path = pathlib.Path(label_dir, "label_info.csv")
     label_info_df = pd.read_csv(label_info_df_path)
