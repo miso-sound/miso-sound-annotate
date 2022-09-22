@@ -54,7 +54,7 @@ if __name__ == "__main__":
     
     if repo_is_public:
         public_taxonomy_url = "https://raw.githubusercontent.com/miso-sound/miso-sound-taxonomy/main/terms/taxonomy_for_annotations.json"
-        decoded_content = requests.get(public_taxonomy_url)
+        decoded_content = requests.get(public_taxonomy_url).text
     else:
         local_secrets_path = pathlib.Path(package_dir, "local_secrets", "secrets.json")
         secrets = get_secrets(local_secrets_path=local_secrets_path)
