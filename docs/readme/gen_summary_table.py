@@ -99,10 +99,10 @@ if __name__ == "__main__":
     label_timing_df = create_anno_timing_df(label_file_paths)
 
     summary_label_timing_df = create_summary_timing_df(label_timing_df)
-    summary_label_timing_df = summary_df.reset_index().to_markdown()
+    summary_label_timing_df_md = summary_label_timing_df.reset_index().to_markdown()
 
     update_table_in_readme(
-        summary_label_timing_df,
+        summary_label_timing_df_md,
         start_str="start_sync_summary_table_label",
         stop_str="stop_sync_summary_table_label",
     )
