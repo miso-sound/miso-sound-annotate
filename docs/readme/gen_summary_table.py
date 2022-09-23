@@ -23,6 +23,62 @@ def create_anno_timing_df(file_paths):
     return anno_timing_df.loc[:, ["File", "Label", "Salience", "Duration"]]
 
 
+def create_summary_timing_df(anno_timing_df):
+    summary_dfs = []
+    summary_dfs.append(
+        anno_timing_df.groupby(["Label"])
+        .sum()
+        .loc[:, ["Duration"]]
+        .rename(columns={"Duration": "Total duration"})
+    )
+    summary_dfs.append(
+        anno_timing_df.groupby(["Label"])
+        .mean()
+        .loc[:, ["Duration"]]
+        .rename(columns={"Duration": "Mean duration"})
+    )
+    summary_dfs.append(
+        anno_timing_df.groupby(["Label"])
+        .count()
+        .loc[:, ["Duration"]]
+        .rename(columns={"Duration": "Count of label instances"})
+    )
+    summary_dfs.append(
+        anno_timing_df.drop_duplicates(subset=["Label", "File"])
+        .groupby(["Label"])
+        .count()
+        .loc[:, ["Duration"]]
+        .rename(columns={"Duration": "Count of files with label"})
+    )
+
+    summary_df = pd.concat(summary_dfs, axis=1).sort_values(
+        by=["Count of files with label"], ascending=False
+    )
+    return summary_df
+
+
+def update_table_in_readme(
+    summary_table,
+    start_str="start_sync_summary_table_label",
+    stop_str="stop_sync_summary_table_label",
+):
+    with open(pathlib.Path(package_dir, "README.md")) as f:
+        old_readme = f.read()
+    end_comment_str = "\n-->\n"
+    start_comment_str = "\n<!---\n"
+    result = re.findall(
+        r"" + start_str + "(.*?)" + stop_str, old_readme, re.DOTALL | re.MULTILINE
+    )[0]
+    old_replace_content = start_str + result + stop_str
+    new_replace_content = (
+        start_str + end_comment_str + summary_table + start_comment_str + stop_str
+    )
+    new_readme = old_readme.replace(old_replace_content, new_replace_content)
+
+    with open(pathlib.Path(package_dir, "README.md"), "w") as f:
+        f.write(new_readme)
+
+
 if __name__ == "__main__":
 
     code_paths = {}
@@ -42,58 +98,24 @@ if __name__ == "__main__":
 
     label_timing_df = create_anno_timing_df(label_file_paths)
 
-    summary_dfs = []
-    summary_dfs.append(
-        label_timing_df.groupby(["Label"])
-        .sum()
-        .loc[:, ["Duration"]]
-        .rename(columns={"Duration": "Total duration"})
-    )
-    summary_dfs.append(
-        label_timing_df.groupby(["Label"])
-        .mean()
-        .loc[:, ["Duration"]]
-        .rename(columns={"Duration": "Mean duration"})
-    )
-    summary_dfs.append(
-        label_timing_df.groupby(["Label"])
-        .count()
-        .loc[:, ["Duration"]]
-        .rename(columns={"Duration": "Count of label instances"})
-    )
-    summary_dfs.append(
-        label_timing_df.drop_duplicates(subset=["Label", "File"])
-        .groupby(["Label"])
-        .count()
-        .loc[:, ["Duration"]]
-        .rename(columns={"Duration": "Count of files with label"})
-    )
-    summary_df = pd.concat(summary_dfs, axis=1).sort_values(
-        by=["Count of files with label"], ascending=False
-    )
-    summary_table = summary_df.reset_index().to_markdown()
+    summary_label_timing_df = create_summary_timing_df(label_timing_df)
+    summary_label_timing_df = summary_df.reset_index().to_markdown()
 
-    with open(pathlib.Path(package_dir, "README.md")) as f:
-        old_readme = f.read()
-    start_str = "start_sync_summary_table"
-    stop_str = "stop_sync_summary_table"
-    end_comment_str = "\n-->\n"
-    start_comment_str = "\n<!---\n"
-    result = re.findall(
-        r"" + start_str + "(.*?)" + stop_str, old_readme, re.DOTALL | re.MULTILINE
-    )[0]
-    old_replace_content = start_str + result + stop_str
-    new_replace_content = (
-        start_str + end_comment_str + summary_table + start_comment_str + stop_str
+    update_table_in_readme(
+        summary_label_timing_df,
+        start_str="start_sync_summary_table_label",
+        stop_str="stop_sync_summary_table_label",
     )
-    new_readme = old_readme.replace(old_replace_content, new_replace_content)
 
-    with open(pathlib.Path(package_dir, "README.md"), "w") as f:
-        f.write(new_readme)
-        
     # generate segmentation_info
     seg_dir = pathlib.Path(package_dir, "segmentation")
     seg_file_paths = list(pathlib.Path(seg_dir).glob("*.txt"))
     seg_timing_df = create_anno_timing_df(seg_file_paths)
+    summary_seg_timing_df = create_summary_timing_df(seg_timing_df)
+
+    seg_timing_df["id"] = [v.split("_seg")[0] for v in seg_timing_df["File"].values]
+    seg_timing_df = seg_timing_df.rename({"Duration": "duration", "Label": "label"})
+    seg_timing_df = seg_timing_df.loc[:, ["id", "label", "duration"]]
+    seg_timing_df.sort_values(by=["label", "duration"])
     seg_timing_df_path = pathlib.Path(seg_dir, "segmentation_info.csv")
     seg_timing_df.to_csv(seg_timing_df_path)
