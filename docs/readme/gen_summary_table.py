@@ -118,4 +118,4 @@ if __name__ == "__main__":
     seg_timing_df = seg_timing_df.loc[:, ["id", "label", "duration"]]
     seg_timing_df = seg_timing_df.sort_values(by=["label", "duration"])
     seg_timing_df_path = pathlib.Path(seg_dir, "segmentation_info.csv")
-    seg_timing_df.to_csv(seg_timing_df_path)
+    seg_timing_df.to_csv(seg_timing_df_path, index=None)
