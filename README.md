@@ -20,7 +20,7 @@ Goal: annotating 5+ instances of 10+ audio files (e.g. onset & offset of sound o
 ## Summary of all labels
 
 <!---
-start_sync_summary_table
+start_sync_summary_table_label
 -->
 |    | Label                    |   Total duration |   Mean duration |   Count of label instances |   Count of files with label |
 |---:|:-------------------------|-----------------:|----------------:|---------------------------:|----------------------------:|
