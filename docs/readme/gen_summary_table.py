@@ -116,6 +116,6 @@ if __name__ == "__main__":
     seg_timing_df["id"] = [v.split("_seg")[0] for v in seg_timing_df["File"].values]
     seg_timing_df = seg_timing_df.rename(columns={"Duration": "duration", "Label": "label"})
     seg_timing_df = seg_timing_df.loc[:, ["id", "label", "duration"]]
-    seg_timing_df.sort_values(by=["label", "duration"])
+    seg_timing_df = seg_timing_df.sort_values(by=["label", "duration"])
     seg_timing_df_path = pathlib.Path(seg_dir, "segmentation_info.csv")
     seg_timing_df.to_csv(seg_timing_df_path)
