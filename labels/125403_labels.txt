@@ -1,0 +1,4 @@
+0.000000	3.196876	C1-clearing_throat
+4.257908	5.635872	C1-coughing
+7.082734	7.964630	C1-coughing
+9.025662	13.173333	C1-coughing
