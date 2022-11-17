@@ -9,7 +9,8 @@ def create_anno_timing_df(file_paths):
     all_records = []
     for p in file_paths:
         anno_df = pd.read_table(p, header=None)
-        label_names = anno_df.iloc[:, 2]
+        # in case NaN columns are read due to extra spaces
+        anno_df = anno_df.dropna(axis=1) 
         anno_df.columns = ["Start", "Stop", "Label"]
         anno_df["Duration"] = anno_df["Stop"] - anno_df["Start"]
         anno_df["File"] = pathlib.Path(p).stem.split("_labels")[0]
