@@ -40,14 +40,14 @@ def create_summary_timing_df(anno_timing_df):
     )
     summary_dfs.append(
         anno_timing_df.groupby(["Label"])
-        .count(numeric_only=True)
+        .count()
         .loc[:, ["Duration"]]
         .rename(columns={"Duration": "Count of label instances"})
     )
     summary_dfs.append(
         anno_timing_df.drop_duplicates(subset=["Label", "File"])
         .groupby(["Label"])
-        .count(numeric_only=True)
+        .count()
         .loc[:, ["Duration"]]
         .rename(columns={"Duration": "Count of files with label"})
     )
