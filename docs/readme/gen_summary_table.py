@@ -28,13 +28,13 @@ def create_summary_timing_df(anno_timing_df):
     summary_dfs = []
     summary_dfs.append(
         anno_timing_df.groupby(["Label"])
-        .sum()
+        .sum(numeric_only=True)
         .loc[:, ["Duration"]]
         .rename(columns={"Duration": "Total duration"})
     )
     summary_dfs.append(
         anno_timing_df.groupby(["Label"])
-        .mean()
+        .mean(numeric_only=True)
         .loc[:, ["Duration"]]
         .rename(columns={"Duration": "Mean duration"})
     )
