@@ -28,26 +28,26 @@ def create_summary_timing_df(anno_timing_df):
     summary_dfs = []
     summary_dfs.append(
         anno_timing_df.groupby(["Label"])
-        .sum()
+        .sum(numeric_only=True)
         .loc[:, ["Duration"]]
         .rename(columns={"Duration": "Total duration"})
     )
     summary_dfs.append(
         anno_timing_df.groupby(["Label"])
-        .mean()
+        .mean(numeric_only=True)
         .loc[:, ["Duration"]]
         .rename(columns={"Duration": "Mean duration"})
     )
     summary_dfs.append(
         anno_timing_df.groupby(["Label"])
-        .count()
+        .count(numeric_only=True)
         .loc[:, ["Duration"]]
         .rename(columns={"Duration": "Count of label instances"})
     )
     summary_dfs.append(
         anno_timing_df.drop_duplicates(subset=["Label", "File"])
         .groupby(["Label"])
-        .count()
+        .count(numeric_only=True)
         .loc[:, ["Duration"]]
         .rename(columns={"Duration": "Count of files with label"})
     )
